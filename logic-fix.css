@@ -1,0 +1,17 @@
+/* 《今晚不要填写事故报告》剧情/逻辑修复层 2026-08-16 */
+.logic-note{margin:10px 0;padding:9px 11px;border:1px solid rgba(111,145,160,.28);background:rgba(8,18,26,.55);color:#8fa5af;font:12px/1.7 ui-monospace,SFMono-Regular,Consolas,monospace;border-radius:6px}
+.logic-note strong{color:#c4d1d6;font-weight:600}
+.logic-redacted{color:#6e8089!important;letter-spacing:.04em}
+.logic-redacted::selection{background:transparent}
+.logic-disabled-card{opacity:.72}
+.logic-disabled-card small{color:#738690!important}
+.logic-transition{padding:8px 10px;margin:4px 0;border-left:2px solid #506f7f;color:#8196a0;font:11px/1.6 ui-monospace,SFMono-Regular,Consolas,monospace}
+.logic-maint-token{border-color:rgba(111,165,140,.34)!important;background:rgba(18,42,34,.28)!important}
+.logic-safety-warning{margin-top:10px;padding:10px 12px;border:1px solid rgba(209,150,83,.42);background:rgba(89,55,17,.18);color:#d6aa75;font:12px/1.7 ui-monospace,SFMono-Regular,Consolas,monospace;border-radius:5px}
+/* 保持弹窗内容变化时宽度稳定，避免长文本/滚动条造成横向跳动 */
+.overlay-card{scrollbar-gutter:stable;overflow-x:hidden}
+.overlay-card textarea{box-sizing:border-box;max-width:100%;resize:vertical}
+@media (max-width:760px){
+  .logic-note,.logic-safety-warning{font-size:12px}
+  .overlay-card{max-width:calc(100vw - 20px)}
+}

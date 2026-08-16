@@ -6,6 +6,7 @@
 <meta name="theme-color" content="#081019">
 <title>今晚不要填写事故报告</title>
 <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="logic-fix.css">
 </head>
 <body>
 <div id="startScreen" class="start-screen">
@@ -23,7 +24,7 @@
     <section class="start-monitor">
       <div class="monitor-head"><span>衡损 · 夜班行政管理系统</span><span class="green-dot"></span></div>
       <div class="monitor-card warning">
-        <strong>管理员权限审查</strong><small>尚未启动</small>
+        <strong>权限状态</strong><small>正常</small>
       </div>
       <div class="monitor-card"><span>今晚待处理报告</span><b>1</b></div>
       <div class="monitor-card"><span>风险收敛状态</span><b>正常</b></div>
@@ -32,7 +33,6 @@
     </section>
   </div>
 </div>
-
 <div id="game" class="game hidden">
 <header class="topbar">
   <div><span class="brand">衡损 / AEGIS</span><span class="subbrand">夜班行政系统</span></div>
@@ -52,12 +52,10 @@
     <button id="saveBtn" class="nav-btn subtle">保存进度</button>
     <button id="resetBtn" class="nav-btn subtle">重新开始</button>
   </aside>
-
   <section class="workspace">
     <div class="workspace-head"><div><h2 id="viewTitle">工作台</h2><p id="viewSubtitle">完成今晚的行政交接。</p></div><div id="systemState" class="state-chip">系统正常</div></div>
     <div id="view" class="view"></div>
   </section>
-
   <aside class="log-panel">
     <div class="log-head"><strong>夜班记录</strong><span id="parserState">本地判定</span></div>
     <div id="log" class="log" role="log" aria-live="polite"></div>
@@ -69,7 +67,6 @@
 <div id="overlay" class="overlay hidden" role="dialog" aria-modal="true">
   <div id="overlayCard" class="overlay-card"></div>
 </div>
-
 <div id="videoOverlay" class="video-overlay hidden">
   <div class="video-shell">
     <div class="video-top"><span id="videoLabel">CAM 01 / 事故回放</span><span id="videoClock">REC</span></div>
@@ -77,7 +74,6 @@
     <div class="video-controls"><span>内部监控存档</span><button id="skipVideoBtn" class="mini-btn">跳过回放</button></div>
   </div>
 </div>
-
 <div id="reportOverlay" class="report-overlay hidden">
   <div class="report-inner">
     <div class="report-cursor">_</div>
@@ -89,5 +85,6 @@
 
 <script src="config.js"></script>
 <script src="app.js"></script>
+<script src="logic-fix.js"></script>
 </body>
 </html>

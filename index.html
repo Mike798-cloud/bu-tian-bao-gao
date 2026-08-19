@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#f2efe8">
+<title>今晚不要填写事故报告</title>
+<link rel="stylesheet" href="style.css?v=20260818i">
+<link rel="stylesheet" href="logic-fix.css?v=20260818i">
+<link rel="stylesheet" href="visual-polish.css?v=20260818k">
+<link rel="stylesheet" href="paywall.css?v=20260818i">
+</head>
+<body>
+<div id="startScreen" class="start-screen">
+  <div class="start-grid">
+    <section class="start-copy">
+      <p class="eyebrow">内部系统 · 夜班行政</p>
+      <h1>今晚不要<br><span>填写事故报告</span></h1>
+      <p class="tagline">林姐临时请假。今晚由你补完事故交接。</p>
+      <div class="start-actions">
+        <button id="newGameBtn" class="btn primary">开始夜班</button>
+        <button id="continueGameBtn" class="btn ghost">继续进度</button>
+      </div>
+      <p class="start-note">建议佩戴耳机。事故演出无血腥画面，但包含职场安全事故与压迫氛围。</p>
+    </section>
+    <section class="start-monitor" aria-label="夜班系统状态">
+      <div class="monitor-head"><span>衡损 · 夜班行政管理系统</span><span class="green-dot"></span></div>
+      <div class="monitor-card warning"><strong>权限状态</strong><small>正常</small></div>
+      <div class="monitor-card"><span>待处理交接</span><b>1</b></div>
+      <div class="monitor-card"><span>未读物业工单</span><b>0</b></div>
+      <div class="monitor-card"><span>系统时钟</span><b>22:06</b></div>
+      <div class="terminal-lines"><i></i><i></i><i></i><i></i></div>
+    </section>
+  </div>
+</div>
+<div id="game" class="game hidden">
+<header class="topbar">
+  <div><span class="brand">衡损</span><span class="subbrand">夜班行政管理系统</span></div>
+  <div class="top-status"><span id="nightLabel">第 1 夜</span><strong id="clock">22:06</strong><span id="accountBadge">夜班行政</span></div>
+</header>
+<main class="shell">
+  <aside class="nav-panel">
+    <div class="nav-title">内部系统</div>
+    <button class="nav-btn active" data-view="desk">工作台 <span id="taskDot" class="dot"></span></button>
+    <button class="nav-btn" data-view="schedule">排班管理</button>
+    <button class="nav-btn" data-view="equipment">设备管理</button>
+    <button class="nav-btn" data-view="property">物业工单</button>
+    <button class="nav-btn" data-view="reports">事故报告</button>
+    <button class="nav-btn" data-view="evidence">线下证据</button>
+    <button id="hintBtn" class="nav-btn">提示与回看 <span id="hintBadge"></span></button>
+    <button id="supportBtn" class="nav-btn support-btn">支持作者 1元</button>
+    <div class="nav-spacer"></div>
+    <button id="saveBtn" class="nav-btn subtle">保存进度</button>
+    <button id="resetBtn" class="nav-btn subtle">重新开始</button>
+  </aside>
+  <section class="workspace">
+    <div class="workspace-head"><div><h2 id="viewTitle">工作台</h2><p id="viewSubtitle">完成今晚的行政交接。</p></div><div id="systemState" class="state-chip">系统正常</div></div>
+    <div id="view" class="view"></div>
+  </section>
+  <aside class="log-panel">
+    <div class="log-head"><strong>夜班记录</strong><span id="parserState">本地判定</span></div>
+    <div id="log" class="log" role="log" aria-live="polite"></div>
+    <div class="memo-box"><span>便签</span><p id="memo">林姐：事故原因按事实填。整改措施不要乱改。</p></div>
+  </aside>
+</main>
+</div>
+<div id="overlay" class="overlay hidden" role="dialog" aria-modal="true"><div id="overlayCard" class="overlay-card"></div></div>
+<div id="videoOverlay" class="video-overlay hidden">
+  <div class="video-shell">
+    <div class="video-top"><span id="videoLabel">CAM 01 / 事故回放</span><span id="videoClock">REC</span></div>
+    <video id="accidentVideo" playsinline preload="metadata"></video>
+    <div class="video-controls"><span>内部监控存档</span><button id="skipVideoBtn" class="mini-btn">跳过回放</button></div>
+  </div>
+</div>
+<div id="reportOverlay" class="report-overlay hidden"><div class="report-inner"><div class="report-cursor">_</div><pre id="reportText"></pre></div></div>
+<div id="toast" class="toast hidden"></div>
+<script src="config.js?v=20260818i"></script>
+<script src="app.js?v=20260818j"></script>
+<script src="logic-fix.js?v=20260818l"></script>
+<script src="date-shift-fix.js?v=20260819a"></script>
+<script src="paywall.js?v=20260818k"></script>
+</body>
+</html>
